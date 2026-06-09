@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamcore Mythos Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>D R E A M C O R E // ARCHIVE</h1>
+        <p>„Îți amintești locul acesta? Nu te uita înapoi.”</p>
+    </header>
+
+    <div class="container">
+       <aside class="sidebar">
+    <h3>Navigare</h3>
+    <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="entitati.html">Entități</a></li>
+        <li><a href="reguli.html">Regulile Spațiului</a></li>
+        <li><a href="harti.html">Hărți / Niveluri</a></li>
+    </ul>
+
+    <div class="sidebar-box">
+        <h4>SISTEM_INFO</h4>
+        <p>• Pagini indexate: 4</p>
+        <p>• Anomalii: <span style="color: #ff00ff; font-weight: bold;">Detectate</span></p>
+        <p>• Conexiune: Instabilă</p>
+    </div>
+
+    <div class="sidebar-box time-box">
+        <h4>TIMP_CURENT</h4>
+        <p id="dream-time">??:??:??</p>
+        <small>Timpul curge invers.</small>
+    </div>
+
+    <div class="sidebar-alert">
+        <strong>AVERTISMENT:</strong>
+        Nu răspunde dacă îți auzi numele strigat din ecran.
+    </div>
+</aside>
+
+        <main class="content">
+            <h2>Bun venit în Arhivă</h2>
+            <p>Acesta este un spațiu sigur pentru documentarea viselor colective, a spațiilor liminale și a miturilor care dispar când clipești.</p>
+            <div class="warning-box">
+                Atenție: Imaginile pot părea familiare. Dincolo de acest punct, timpul nu mai are sens.
+            </div>
+        </main>
+    </div>
+
+    <script>
+    function updateDreamTime() {
+        // Generează ore, minute și secunde complet aleatorii ca să pară un ceas stricat dintr-un vis
+        let h = Math.floor(Math.random() * 24).toString().padStart(2, '0');
+        let m = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+        let s = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+        
+        let timeElement = document.getElementById('dream-time');
+        if(timeElement) {
+            timeElement.innerText = `${h}:${m}:${s}`;
+        }
+    }
+    // Actualizează timpul la fiecare jumătate de secundă (500 milisecunde) pentru un efect haotic
+    setInterval(updateDreamTime, 500);
+</script>
+
+</body>
+</html>

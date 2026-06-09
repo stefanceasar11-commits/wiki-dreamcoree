@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entități - Dreamcore Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>D R E A M C O R E // ARCHIVE</h1>
+        <p>„Ei te cunosc deja. Tu îi cunoști?”</p>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+    <h3>Navigare</h3>
+    <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="entitati.html">Entități</a></li>
+        <li><a href="reguli.html">Regulile Spațiului</a></li>
+        <li><a href="harti.html">Hărți / Niveluri</a></li>
+    </ul>
+
+    <div class="sidebar-box">
+        <h4>SISTEM_INFO</h4>
+        <p>• Pagini indexate: 4</p>
+        <p>• Anomalii: <span style="color: #ff00ff; font-weight: bold;">Detectate</span></p>
+        <p>• Conexiune: Instabilă</p>
+    </div>
+
+    <div class="sidebar-box time-box">
+        <h4>TIMP_CURENT</h4>
+        <p id="dream-time">??:??:??</p>
+        <small>Timpul curge invers.</small>
+    </div>
+
+    <div class="sidebar-alert">
+        <strong>AVERTISMENT:</strong>
+        Nu răspunde dacă îți auzi numele strigat din ecran.
+    </div>
+</aside>
+       <main class="content">
+            <h2>Registrul Creaturilor</h2>
+
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Caută un mit sau o entitate..." onkeyup="searchEntities()">
+            </div>
+
+            <div id="entityList">
+                
+                <div class="entity-box">
+                    <img src="staticobserver.png" alt="Static Observer"  style="width: 100; height: 150px; object-fit:cover; margin-bottom:15px; border:1px solid #512da8;">
+                    <h3>#042 - Static Observer (Observatorul)</h3>
+                    <p><strong>Aspect:</strong> Corp uman îmbrăcat în costum office din anii '80, dar în loc de cap are un televizor vechi care emite doar „pureci” și zgomot alb.</p>
+                    <p><strong>Comportament:</strong> Apare de obicei la capătul coridoarelor lungi. Nu se mișcă dacă îl privești direct, dar dacă clipești, se apropie cu câțiva metri.</p>
+                </div>
+
+                <hr style="border: 1px dashed #512da8; margin: 20px 0;">
+
+                <div class="entity-box">
+                    <img src="argus.jpg" alt="Argus din Nori" style="width: 100; height: 150px; object-fit:cover; margin-bottom:15px; border:1px solid #512da8;">
+                    <h3>#109 - Argus din Nori</h3>
+                    <p><strong>Aspect:</strong> Un ochi uman uriaș, hiper-realist, care plutește printre norii perfect roz ai cerului artificial.</p>
+                    <p><strong>Comportament:</strong> Nu este agresiv, dar privirea lui provoacă o stare intensă de „déjà vu” și paranoia. Se crede că el este cel care randează decorul din jurul tău.</p>
+                </div>
+
+                <hr style="border: 1px dashed #512da8; margin: 20px 0;">
+
+                <div class="entity-box">
+                    <img src="Ghidul de plastic.png" alt="Ghidul de Plastic"  style="width: 100; height: 150px; object-fit:cover; margin-bottom:15px; border:1px solid #512da8;">
+                    <h3>#007 - Ghidul de Plastic</h3>
+                    <p><strong>Aspect:</strong> O siluetă din textură de revistă veche, decupată, având o floare mare de plastic sau un soare zâmbitor în loc de față.</p>
+                    <p><strong>Comportament:</strong> Îți va oferi indicații textuale pe ecrane sau bilețele pentru a „ieși” din nivel. Atenție: 50% din instrucțiunile sale sunt menite să te piardă definitiv.</p>
+                </div>
+
+                <hr style="border: 1px dashed #512da8; margin: 20px 0;">
+
+                <div class="entity-box">
+                    <img src="the window shopper.png" alt="The Window Shopper"  style="width: 100; height: 150px; object-fit:cover; margin-bottom:15px; border:1px solid #512da8;">
+                    <h3>#088 - The Window Shopper (Privitorul de Vitrine)</h3>
+                    <p><strong>Aspect:</strong> O siluetă complet albă, bidimensională, care seamănă cu un manechin de magazin decupat dintr-o revistă veche. În loc de ochi, are un sticker cu un zâmbet perfect de reclamă.</p>
+                    <p><strong>Comportament:</strong> Apare doar în spațiile care seamănă cu mall-uri abandonate. Este inofensiv dacă te oprești și „admiri” vitrina timp de câteva secunde.</p>
+                </div>
+
+                <hr style="border: 1px dashed #512da8; margin: 20px 0;">
+
+                <div class="entity-box">
+                    <img src="Memory leak.png" alt="Memory Leak"  style="width: 100; height: 150px; object-fit:cover; margin-bottom:15px; border:1px solid #512da8;">
+                    <h3>#213 - Memory Leak (Scurgerea de Memorie)</h3>
+                    <p><strong>Aspect:</strong> Nu are un corp fizic fix. Se manifestă ca o umbră în formă de fluture uriaș sau ca o pată de textură cu rezoluție foarte mică (pixelată).</p>
+                    <p><strong>Comportament:</strong> Când te apropii, auzi în minte melodii din copilărie. Pentru a scăpa, trebuie să te gândești la un obiect modern care nu exista în acea epocă.</p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+    function searchEntities() {
+        let input = document.getElementById('searchBar').value.toLowerCase();
+        let boxes = document.getElementsByClassName('entity-box');
+        let lines = document.getElementsByTagName('hr');
+
+        for (let i = 0; i < boxes.length; i++) {
+            if (boxes[i].innerText.toLowerCase().includes(input)) {
+                boxes[i].style.display = "block";
+                if(lines[i]) lines[i].style.display = "block";
+            } else {
+                boxes[i].style.display = "none";
+                if(lines[i]) lines[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+
+</body>
+</html>
